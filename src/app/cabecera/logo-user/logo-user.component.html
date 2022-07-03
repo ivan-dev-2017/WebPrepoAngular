@@ -1,0 +1,19 @@
+<!--<button *ngIf="btn_log_visibility" type="button" (click)="inicioSesion()"><span [innerHTML]="btn_logo"></span>
+    <img  class='logo-user' src="assets/imagenes/user-default.png" >
+    
+</button>
+
+<button *ngIf="!btn_log_visibility" type="button" ><span >AAAAAAA</span>
+    <img  class='logo-user' src="assets/imagenes/user-default.png" >
+    
+</button>-->
+<button *ngIf="btn_log_visibility" type="button" (click)="inicioSesion()"><span #btn_logo_texto></span>
+    <img  class='logo-user' src="assets/imagenes/user-default.png" >
+    
+</button>
+
+
+<button *ngIf="!btn_log_visibility" type="button" ><span >AAAAAAA</span>
+    <img  class='logo-user' src="assets/imagenes/user-default.png" >
+    
+</button>

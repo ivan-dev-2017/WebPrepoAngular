@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <nav class="navbar fixed-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand d-none d-sm-block" routerLink="/" routerLinkActive="active">
+        <img src="assets/imagenes/arcoiris.jpg" alt="" width="300" height="64">
+      </a>
+
+      <a class="navbar-brand d-block d-sm-none" routerLink="/" routerLinkActive="active">
+        <button style="width:16%;" class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">MENÚ
+        </button>
+        <img src="assets/imagenes/arcoirisXS.jpg" alt="" width="80%">
+      </a>
+      <h1>Ejemplos Angular</h1>
+      <form class="d-flex d-none d-sm-block">
+
+        <button class="btn btn-outline-success" type="button" routerLink="">Inicio</button>
+        <!--<a [routerLink]="['']" [queryParams]="{ order: 'popular'}">Inicio</a>-->
+      </form>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">AngularPalíndromo</h5>
+          <h6 class="card-subtitle mb-2 text-muted">palabra palíndromo</h6>
+          <p class="card-text">Verifica si una palabra es un palíndromo</p>
+          <span [innerHTML]="control"></span>
+          <input type="text" #palabra>
+          <button (click)="comprobarPalindromo(palabra.value)">Comprobar</button>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <app-algoritmo-patron-lista-frase></app-algoritmo-patron-lista-frase>
+    </div>
+
+    <div class="col-sm-3">
+      <app-java-script-algoritmo-patron-lista-frase></app-java-script-algoritmo-patron-lista-frase>
+    </div>    
+
+    <div class="col-sm-3">
+      <app-spiner-alfa></app-spiner-alfa>
+    </div>        
+    
+
+
+  </div>
+
+</div>

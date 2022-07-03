@@ -1,0 +1,7 @@
+POST http://localhost:3333/loginHash
+content-type: application/json
+
+{
+    "email": "ivan.velasco.333@gmail.com",
+    "password": "1234"
+}

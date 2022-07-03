@@ -1,0 +1,101 @@
+<div class="row">
+    <!--Área menú izquierda-->
+    <div class="col-sm-3 d-none d-sm-block">
+        <app-menu-izquierda></app-menu-izquierda>
+    </div>
+
+    <!--Área de trabajo-->
+    <div class="col-xs-12 col-sm-9" style="border: solid 1px black">
+
+        <!--<div [ngSwitch]="selectedValue">
+            <ng-template [ngSwitchCase]="'template1'">One is Selected</ng-template>
+            <ng-template [ngSwitchCase]="'template2'">Two is Selected</ng-template>
+            <ng-template ngSwitchDefault>This is Default</ng-template>
+        </div>-->
+
+        <ng-container [ngSwitch]="template_area_trabajo">
+
+            <ng-container *ngSwitchCase="'home'">
+                <ng-container *ngTemplateOutlet="template_home"></ng-container>
+            </ng-container>
+            <ng-container *ngSwitchCase="'login'">
+                <ng-container *ngTemplateOutlet="template_login"></ng-container>
+            </ng-container>
+
+            <ng-container *ngSwitchDefault>Default Template</ng-container>
+
+        </ng-container>
+
+    </div>
+
+</div>
+
+<!-- Login Home-->
+<ng-template #template_home>
+
+  <!--Área de puntuación-->
+  <div class="row" style="border: solid 1px gray">
+    <div class="col-sm-1">    
+    <h1><span class="badge bg-secondary"># 1</span></h1>          
+    </div>
+    <div class="col-sm-1">              
+    <img src="assets/imagenes/icono_preguntas.jpg" class="img-thumbnail" width="50%" alt="...">
+    </div>     
+    <div class="col-sm-6">              
+    <h1><span class="badge bg-secondary">35 de 60 O O O O O O O O O O</span></h1> 
+    </div>  
+    <div class="col-sm-1">              
+    <img src="assets/imagenes/icono_preguntas.jpg" class="img-thumbnail" width="50%" alt="...">
+    </div>    
+    <div class="col-sm-3">    
+    <h1><span class="badge bg-secondary">Mensaje Ok</span></h1>          
+    </div>                       
+</div>
+
+<!--Área de pregunta-->
+<div class="row" style="border: solid 1px gray">
+    <div class="col-sm-3">    
+
+    <button type="button" class="btn btn-info">pregunta</button>
+
+
+    </div>
+</div>
+
+<!--Área de respuesta-->
+<div class="row" style="border: solid 1px gray">
+    <div class="col-sm-3">    
+
+    <button type="button" class="btn btn-info">respuesta</button>
+
+
+    </div>
+</div>          
+</ng-template>
+
+<!-- Login template-->
+<ng-template #template_login>
+    <div class="row" style="border: solid 1px gray">
+        <div class="col-sm-4">  
+    
+        <form [formGroup]="formularioLogin" (ngSubmit)="onSubmitLoginUsuarioHash()">        
+            <div class="input-group">
+                <span class="input-group-text" for="email">E-mail: </span>
+                <input id="_email" type="text" formControlName="email" placeholder="PrepoAcademy@gmail.com" class="form-control">
+            </div>    
+            <div class="input-group">
+                <span class="input-group-text" for="password">Contraseña: </span>
+                <input id="_password" type="text" formControlName="password" placeholder="*******" class="form-control">
+            </div>           
+    
+            <button type="submit" class="btn btn-info" [disabled]="!formularioLogin.valid">Ingresar</button>
+            <div class="input-group">
+                <span>{{mensajeErrorLogin}}</span>
+            </div>                
+            
+        </form>
+    
+        </div>
+    </div>
+        
+</ng-template>

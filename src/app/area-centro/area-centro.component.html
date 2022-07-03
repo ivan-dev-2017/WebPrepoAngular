@@ -1,0 +1,23 @@
+<ng-template appExampleZippyContent>
+    It depends on what you do with it.
+  </ng-template>
+
+<div class="row">
+    <!--Área menú izquierda-->
+    <div class="col-sm-3 d-none d-sm-block">
+        <app-menu-izquierda></app-menu-izquierda>
+    </div>
+
+    <!--Área de trabajo-->
+    <div class="col-xs-12 col-sm-9" style="border: solid 1px black">
+
+        <!-- [] paso de mensaje padre hijo, () paso de mensaje hijo padre-->
+        <app-area-trabajo [mensajeTexto]="valorTexto" (newMensajeEvent)="addMensaje($event)">
+        </app-area-trabajo>
+
+        <!-- Paso de mensaje desde componente hijo-->
+        <p>{{mensajeDesdeComponenteHijo}}</p>        
+
+    </div>
+
+  </div>  

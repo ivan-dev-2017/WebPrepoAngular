@@ -1,0 +1,25 @@
+.spinner {
+    border: 4px solid;
+    border-color: rgba(0, 0, 0, .5);
+    border-left-color: transparent;
+    width: 36px;
+    height: 36px;  
+    border-radius: 50%;
+
+    animation: spin_alfa 4s linear infinite;
+
+  }
+
+  @keyframes spin_alfa {
+    0% {
+      transform: rotate(0deg);
+      border-color: rgba(0, 240, 200, .5);
+      border-left-color: transparent;
+    }   
+  
+    100% {
+      transform: rotate(360deg);
+      border-color: rgba(0, 255, 0, 1);
+      border-left-color: transparent;
+    }
+}

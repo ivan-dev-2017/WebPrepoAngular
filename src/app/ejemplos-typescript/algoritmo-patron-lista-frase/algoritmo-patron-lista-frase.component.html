@@ -1,0 +1,18 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Angular Algorítmo patrón Lista Palabras</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Input: patron:String, frase: String</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Output: boolean</h6>
+        <p class="card-text">
+            Cada letra del patrón debe asociarse a una palabra de la frase separada por espacios.
+            Debe existir solamente una asociación entre cada letra y cada palabra no puede repetirse
+            ;)
+        </p>
+        <span [innerHTML]="control_patron"></span>
+        <input type="text" #patron [placeholder]="patron_inicio" [value]="patron_inicio">
+        <input type="text" #frase [placeholder]="frase_inicio" [value]="frase_inicio">
+        <button (click)="comprobarPatron(patron.value, frase.value)">Comprobar</button>
+         
+
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="row" style="border: solid 1px gray">
+    <div class="col-sm-4">  
+
+    <form [formGroup]="formularioLogin" (ngSubmit)="onSubmitLoginUsuarioHash()">        
+        <div class="input-group">
+            <span class="input-group-text" for="email">E-mail: </span>
+            <input id="_email" type="text" formControlName="email" placeholder="PrepoAcademy@gmail.com" class="form-control">
+        </div>    
+        <div class="input-group">
+            <span class="input-group-text" for="password">Contraseña: </span>
+            <input id="_password" type="text" formControlName="password" placeholder="*******" class="form-control">
+        </div>           
+
+        <button type="submit" class="btn btn-info" [disabled]="!formularioLogin.valid">Ingresar</button>
+    </form>
+    <button type="button" class="btn btn-info" (click)="check()">check</button>
+    <span #id_span class="input-group-text">{{usuario.fotografia}} </span>
+
+    </div>
+</div>

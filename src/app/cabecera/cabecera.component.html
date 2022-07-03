@@ -1,0 +1,22 @@
+<nav class="navbar fixed-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand d-none d-sm-block" routerLink="/" routerLinkActive="active">
+        <img src="assets/imagenes/arcoiris.jpg" alt="" width="300" height="64">
+      </a>
+    
+      <a class="navbar-brand d-block d-sm-none" routerLink="/" routerLinkActive="active">
+        <button style="width:16%;" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" 
+          data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">MENÚ                      
+        </button>
+        <img src="assets/imagenes/arcoirisXS.jpg" alt="" width="80%">        
+      </a>  
+
+      
+      <form class="d-flex d-none d-sm-block">                
+        <button  class="btn btn-outline-success" type="button" (click)="goExamples()">Ejemplos</button>                
+        <app-logo-user></app-logo-user>
+               
+        
+      </form>
+    </div>
+</nav>
