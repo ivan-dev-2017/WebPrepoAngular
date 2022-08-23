@@ -25,6 +25,7 @@ export class LoginService {
   private preguntas = 'http://localhost:3333/guardarPregunta';  // URL to web api  
   private urlAutenticacion = 'http://localhost:3333/login';
   private urlAutenticacionHash = 'http://localhost:3333/loginHash';
+  private urlrecuperarPassword = 'http://localhost:3333/recuperarMail';
 
   usuarioLogin: Boolean = true;  
   private usuario:Usuario;
@@ -77,6 +78,14 @@ export class LoginService {
     );
     
   }
+
+  recuperarPassword(correo: string): Observable<boolean>{
+    console.log("correo string", correo)
+    return this.http.post<boolean>(this.urlrecuperarPassword, correo, httpOptions).pipe(      
+      catchError(this.handleError<boolean>('autenticacion'))
+    );
+    
+  }  
 
   usuarioAutenticado(){
     this.usuarioLogin = false;
